@@ -26,6 +26,16 @@ rake jasmine
 
 ```
 
+Open Source Projects used
+-------------------------
+
+[jQuery](https://github.com/jquery/jquery)
+
+[jQuery Mobile](https://github.com/jquery/jquery-mobile)
+
+[hogan.js](https://github.com/twitter/hogan.js)
+
+
 Icons
 -----
 
