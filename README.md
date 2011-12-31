@@ -29,6 +29,12 @@ rake jasmine
 Open Source Projects used
 -------------------------
 
+[Jasmine](https://github.com/pivotal/jasmine)
+
+[Jasmine jQuery](https://github.com/velesin/jasmine-jquery)
+
+[Jasmine Ajax](https://github.com/pivotal/jasmine-ajax)
+
 [jQuery](https://github.com/jquery/jquery)
 
 [jQuery Mobile](https://github.com/jquery/jquery-mobile)
