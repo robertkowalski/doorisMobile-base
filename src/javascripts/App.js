@@ -6,15 +6,18 @@ App = {
 
   doorTemplate: '',
   dhcpTemplate: '',
+  updatingTemplate: '',
 
   init: function() {
     var self = this,
         dhcpHtml = '<td><img src="images/computer.png" /></td><td class="bottom"><div id="clientnumber" class="font">{{clientCount}}</div></td>',
-        doorHtml = '<td><img src="images/{{openLocked}}"/></td><td class="bottom"><div class="font">{{time}}</div></td>';
-
+        doorHtml = '<td><img src="images/{{openLocked}}"/></td><td class="bottom"><div class="font">{{time}}</div></td>',
+        updatingHtml = '<td><img src="images/time.png" /></td><td>updating...</td>';
+        
     self.dhcpTemplate = Hogan.compile(dhcpHtml);
     self.doorTemplate = Hogan.compile(doorHtml);
-
+    self.updatingTemplate = Hogan.compile(updatingHtml);
+ 
     self.bindToView();
     self.tick();
 
@@ -137,10 +140,20 @@ App = {
     return month;
 
   },
+  
+  setViewToUpdating: function() {
+    var self = this,
+        output = self.updatingTemplate.render();
 
+    $('#msg').find('#doorstatus').html(output);
+    $('#msg').find('#clientcount').html(output);
+    
+  },
+  
   tick: function() {
     var self = this;
-
+    
+    self.setViewToUpdating();
     self.update(self.dhcpUrl, self.updateDHCPSuccess, self.updateFailure);
     self.update(self.doorUrl, self.updateDoorSuccess, self.updateFailure);
 
